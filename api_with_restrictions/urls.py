@@ -20,12 +20,13 @@ from rest_framework.routers import DefaultRouter
 
 from advertisements.views import AdvertisementViewSet
 
-router = DefaultRouter()
-router.register('advertisements', AdvertisementViewSet)
+r = DefaultRouter()
+r.register('advertisements', AdvertisementViewSet)
+
 # TODO: подключите `AdvertisementViewSet`
 
 
 urlpatterns = [
-    path('api/', include(router.urls)),
+    path('api/', include(r.urls)),
     path('admin/', admin.site.urls),
-] + router.urls
+] + r.urls
